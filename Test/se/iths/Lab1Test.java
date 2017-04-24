@@ -39,18 +39,16 @@ public class Lab1Test {
 	public void addNotNull(){
 		int result = lab1.add(20, 20);
 		
-		//System.out.println("addNotNull:");
 		assertNotNull(result);
 	}
 	
 	@Category(MathTests.class)
 	@Test
-	public void addValid(){
+	public void addPositives(){
 		int a = 45;
 		int b = 55;
 		int result = lab1.add(a, b);
 		
-		//System.out.println("addValid:");
 		assertEquals(result, 100);
 	}
 	
@@ -61,7 +59,6 @@ public class Lab1Test {
 		int b = -55;
 		int result = lab1.add(a, b);
 		//Av någon anledning ökas inte callCounter med den här metoden
-		//System.out.println("addNegatives:");
 		
 		assertEquals(result, -100);
 	}
@@ -70,8 +67,7 @@ public class Lab1Test {
 	@Test
 	public void addToMaxValue(){
 		int result = lab1.add(Integer.MAX_VALUE, 1);
-		
-		//System.out.println("addToMaxValue:");
+	
 		assertEquals(result, Integer.MAX_VALUE+1);
 	}
 	
@@ -80,7 +76,6 @@ public class Lab1Test {
 	public void addMaxToMinValue(){
 		int result = lab1.add(Integer.MIN_VALUE, Integer.MAX_VALUE);
 		
-		//System.out.println("addMaxToMinValue:");
 		assertTrue(result == -1);
 	}
 	
@@ -89,16 +84,14 @@ public class Lab1Test {
 	public void subtractNotNull(){
 		int result = lab1.subtract(2, 1);
 		
-		//System.out.println("subtractNotNull:");
 		assertNotNull(result);
 	}
 	
 	@Category(MathTests.class)
 	@Test
-	public void subtractValid(){
+	public void subtractPositives(){
 		int result = lab1.subtract(100, 60);
 		
-		//System.out.println("subtractValid:");
 		assertEquals(result, 40);
 	}
 	
@@ -107,7 +100,6 @@ public class Lab1Test {
 	public void subtractNegatives(){
 		int result = lab1.subtract(-100, -40);
 		
-		//System.out.println("subtractNegatives:");
 		assertEquals(-60, result);
 	}
 	
@@ -116,7 +108,6 @@ public class Lab1Test {
 	public void subtractFromMinValue(){
 		int result = lab1.subtract(Integer.MIN_VALUE, 1);
 		
-		//System.out.println("subtractFromMinValue:");
 		assertEquals(result, Integer.MIN_VALUE-1);
 	}
 	
@@ -125,16 +116,14 @@ public class Lab1Test {
 	public void multiplyNotNull(){
 		int result = lab1.multiply(5, 5);
 		
-		//System.out.println("multiplyNotNull:");
 		assertNotNull(result);
 	}
 	
 	@Category(MathTests.class)
 	@Test
-	public void multiplyValid(){
+	public void multiplyPositives(){
 		int result = lab1.multiply(2, 60);
 		
-		//System.out.println("multiplyValid:");
 		assertEquals(result, 120);
 	}
 	
@@ -143,18 +132,16 @@ public class Lab1Test {
 	public void multiplyNegatives(){
 		int result = lab1.multiply(-10, 5);
 		
-		//System.out.println("multiplyNegatives:");
 		assertEquals(result, -50);
 	}
 	
 	@Category(MathTests.class)
 	@Test
-	public void divideValid(){
+	public void dividePositives(){
 		int a = 10;
 		int b = 2;
 		int result = lab1.divide(a, b);
 		
-		//System.out.println("divideValid:");
 		assertEquals(result, 5);
 	}
 	
@@ -165,19 +152,15 @@ public class Lab1Test {
 		int b = 2;
 		int result = lab1.divide(a, b);
 		
-		//System.out.println("divideMaxValue:");
 		assertEquals(result, (Integer.MAX_VALUE / 2));
 	}
 	
 	@Category(MathTests.class)
 	@Test
-	public void divideMaxValuePlusOne(){
-		int a = Integer.MAX_VALUE + 1;
-		int b = 2;
-		int result = lab1.divide(a, b);
+	public void divideNegatives(){
+		int result = lab1.divide(-10, -2);
 		
-		//System.out.println("divideMaxValuePlusOne:");
-		assertEquals(result, ((Integer.MAX_VALUE + 1) / 2));
+		assertEquals(result, 5);
 	}
 	
 	@Category(MathTests.class)
@@ -190,7 +173,6 @@ public class Lab1Test {
 	public void reverseNotNull(){
 		String returnString = "testing";
 		
-		//System.out.println("reverseNotNull:");
 		assertNotNull(lab1.reverse(returnString));
 	}
 	
@@ -198,7 +180,6 @@ public class Lab1Test {
 	public void reverseValid(){
 		String testString = "9876543210";
 		
-		//System.out.println("reverseValid:");
 		assertEquals(lab1.reverse(testString), "0123456789");
 	}
 	
@@ -206,7 +187,6 @@ public class Lab1Test {
 	public void reverseNullParameter(){
 		String testString = null;
 		
-		//System.out.println("reverseNullParameter:");
 		assertNull(testString);
 	}
 
@@ -214,7 +194,6 @@ public class Lab1Test {
 	public void quoteNotNull(){
 		String returnQuote = lab1.quote();
 		
-		//System.out.println("quoteNotNull:");
 		assertNotNull(returnQuote);
 	}
 	
@@ -268,7 +247,14 @@ public class Lab1Test {
 			}
 		}
 		
-		//System.out.println("quoteAllQuotes:");
+		System.out.println("Einstein quote printed: " + quote_einstein);
+		System.out.println("Gandhi quote printed: " + quote_gandhi);
+		System.out.println("Shakespeare quote printed: " + quote_shakespeare);
+		System.out.println("MLK quote printed: " + quote_mlk);
+		System.out.println("Confucius quote printed: " + quote_confucius);
+		System.out.println("Wilde quote printed: " + quote_wilde);
+		System.out.println("Nietzsche quote printed: " + quote_nietzsche);
+		System.out.println("Adams quote printed: " + quote_adams);
 		assertTrue(found_all_quotes);
 	}
 	
